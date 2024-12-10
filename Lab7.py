@@ -103,6 +103,7 @@ merged_df = pd.merge(df,df_poprawa, on='Nr_albumu', how='left')
 merged_df.to_csv("Poprawka", index=False)
 
 #f)
+#loaded_data = pd.read_csv()
 
 #g)
 new_student = {
