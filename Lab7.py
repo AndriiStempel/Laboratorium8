@@ -1,5 +1,4 @@
 import pandas as pd
-#Zadanie 4
 data = {
     "ID": [1, 2, 3, 4, 5],
     "Imię": ["Anna", "Jan", "Katarzyna", "Tomasz", "Michał"],
@@ -9,35 +8,35 @@ data = {
     "Pensja": [8000, 4500, 6000, 5500, 7000]
 }
 df = pd.DataFrame(data)
-
-# a) 
-
+# a)
 większą_pensja = df[df["Pensja"] > 5000]
-print(większą_pensja,"\n")
+print("a) Pracownicy z pensją > 5000:\n", większą_pensja, "\n")
 
 # b) 
 sorted_by_age = df.sort_values(by="Wiek")
-print(sorted_by_age,"\n")
+print("b) Posortowane wg wieku:\n", sorted_by_age, "\n")
 
-# c)
+# c) 
 avg_salary_by_position = df.groupby("Stanowisko")["Pensja"].mean().reset_index()
-print(avg_salary_by_position,"\n")
+print("c) Średnia pensja wg stanowiska:\n", avg_salary_by_position, "\n")
 
-# d) 
+# d)
 promotion_data = {
     "ID": [2, 4],
     "Nowe Stanowisko": ["Senior Programista", "Team Leader"]
 }
 promotions = pd.DataFrame(promotion_data)
 merged_data = df.merge(promotions, on="ID", how="left")
-print(merged_data,"\n")
+print("d) Dane po dodaniu awansów:\n", merged_data, "\n")
 
 '''
-csv_file_path = ".csv"
+# e)
+csv_file_path = "...."
 merged_data.to_csv(csv_file_path, index=False)
 
-f) 
-csv_file_path, loaded_data.head()
+# f)
+loaded_data = pd.read_csv(csv_file_path)
+print("f) Wczytane dane z CSV:\n", loaded_data.head())
 '''
 #Zadanie 5
 data = {
@@ -85,7 +84,7 @@ new_student = {
     'Ocena_poprawa': None
 }
 new_student_df = pd.DataFrame([new_student])
-updated_df = pd.new_studnet_df([merged_df, new_student_df])
+#updated_df = pd.([merged_df, new_student_df])
 
 # h)
 unique_oceny = df['Ocena'].unique()
