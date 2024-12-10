@@ -1,34 +1,4 @@
 import pandas as pd
-#Zadanie 1
-
-df = pd.read_csv('demografia.csv')
-print(df)
-
-#Zadanie 2
-
-plik = 'demografia.csv'
-
-plik = 'demografia.csv'
-dane = pd.read_csv(
-    plik,
-    decimal=',',
-    na_values=['NA', 'n/a', 'NaN']
-)
-index_max = dane['2022'].idxmax(skipna=True)
-kraj = dane.loc[index_max, 'KRAJE']
-print ("max przyrost ludnosci w 2022r jest w:", kraj,"z przyrostem:",index_max)
-
-#Zadanie 3
-plik = 'demografia.csv'
-
-dane = pd.read_csv(plik, decimal=',', na_values=['NA', 'n/a', 'Nan'])
-dane_bezkraju = dane.drop(columns=["KRAJE"])
-max_przyrost = dane_bezkraju.max().max()
-rok_max_przyrost = dane_bezkraju.max().idxmax()
-index_max_przyrost = dane_bezkraju[rok_max_przyrost].idxmax()
-kraj = dane.loc[index_max_przyrost, "KRAJE"]
-print("\n",kraj)
-
 #Zadanie 4
 data = {
     "ID": [1, 2, 3, 4, 5],
